@@ -6,57 +6,57 @@
 ![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458?logo=pandas&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-brightgreen)
 
-টাইটানিক জাহাজের যাত্রীদের বেঁচে থাকার সম্ভাবনা (Survival Probability) প্রেডিক্ট করার জন্য একটি এন্ড-টু-এন্ড মেশিন লার্নিং প্রজেক্ট। এই প্রজেক্টটিকে বেসিক জুপিটার নোটবুক থেকে উন্নীত করে একটি সম্পূর্ণ **ইন্টারমিডিয়েট লেভেলের প্রফেশনাল মেশিন লার্নিং পাইপলাইন** এবং **Interactive Glassmorphism Flask Web Application**-এ রূপান্তর করা হয়েছে।
+An end-to-end Machine Learning project designed to predict passenger survival probability on the Titanic. This project elevates a basic exploratory notebook into an **intermediate-level, production-grade Machine Learning pipeline** featuring a modern **Interactive Glassmorphism Flask Web Application**.
 
 ---
 
-## 🌟 নতুন আপডেট ও উন্নয়ন (Key Improvements)
+## 🌟 Key Features & Improvements
 
-- 📁 **স্ট্যান্ডার্ড প্রজেক্ট আর্কিটেকচার**: সমস্ত ফাইল ও কোড রিফ্যাক্টর করে ইন্ডাস্ট্রি স্ট্যান্ডার্ড ডিরেক্টরি লেআউটে সাজানো হয়েছে (`data/`, `notebooks/`, `src/`, `models/`, `app/`)।
-- ⚙️ **মডিউলার ফিচার ইঞ্জিনিয়ারিং**: নাম থেকে `Title` এক্সট্রাকশন, বয়স ও ভাড়ার গ্রুপিং ভিত্তিক ইম্পুটেশন, এবং `FamilySize` ও `IsAlone` ফিচার যুক্ত করা হয়েছে।
-- 🤖 **মাল্টি-মডেল তুলনা ও এভালুয়েশন**: Logistic Regression, Decision Tree, Random Forest, এবং Gradient Boosting মডেলগুলোর মধ্যে Stratified 5-Fold Cross Validation এবং ROC-AUC স্কোরের ভিত্তিতে সেরা মডেলটি তৈরি করা হয়েছে।
-- 🎨 **Modern Glassmorphism Web App**: ইউজারদের জন্য দৃষ্টিনন্দন UI, যেখানে যাত্রীর তথ্য প্রদান করলে রিয়েল-টাইমে সারভাইভাল স্ট্যাটাস ও শতকরা কত পারসেন্ট বেঁচে থাকার সম্ভাবনা তা প্রদর্শিত হয়।
-- ⚡ **১-ক্লিকে রান করার সুবিধা**: Windows ব্যবহারকারীদের জন্য `run_app.bat` ডাবল ক্লিক করেই ওয়েবাসে চালু করার সুবিধা।
+- 📁 **Standard ML Architecture**: Modularized codebase following industry-standard directory layout (`data/`, `notebooks/`, `src/`, `models/`, `app/`).
+- ⚙️ **Feature Engineering Pipeline**: Includes passenger title extraction (`Title`), missing value imputations grouped by title/class, and engineered features (`FamilySize`, `IsAlone`).
+- 🤖 **Multi-Model Comparison & Evaluation**: Rigorous evaluation across Logistic Regression, Decision Tree, Random Forest, and Gradient Boosting using 5-Fold Stratified Cross-Validation and ROC-AUC metrics.
+- 🎨 **Modern Glassmorphism Web Interface**: Responsive Flask UI rendering real-time survival status alongside survival probability percentage bars.
+- ⚡ **1-Click Startup**: Included Windows batch script (`run_app.bat`) to automate environment setup, dependency installation, and web server launch.
 
 ---
 
-## 📂 ডিরেক্টরি স্ট্রাকচার (Project Structure)
+## 📂 Project Directory Structure
 
 ```text
 Project_Titanic/
 ├── 📁 app/                          # Flask Web Application
-│   ├── app.py                       # Main Flask web application server
+│   ├── app.py                       # Main Flask server & prediction endpoints
 │   ├── 📁 static/
-│   │   └── wallpaper.jpg            # Responsive UI Background wallpaper
+│   │   └── wallpaper.jpg            # Responsive UI background image
 │   └── 📁 templates/
-│       └── index.html               # Glassmorphism HTML/CSS UI interface
-├── 📁 data/                         # Data files directory
+│       └── index.html               # Glassmorphism HTML/CSS UI template
+├── 📁 data/                         # Project Datasets
 │   ├── 📁 raw/
 │   │   ├── train.csv                # Original training dataset
 │   │   ├── test.csv                 # Kaggle test dataset
 │   │   └── gender_submission.csv    # Benchmark submission dataset
 │   └── 📁 processed/
-│       └── submission.csv           # Final model output submission file
+│       └── submission.csv           # Model output submission file
 ├── 📁 models/
-│   └── titanic_pipeline.pkl         # Trained Scikit-Learn ML Pipeline artifact
+│   └── titanic_pipeline.pkl         # Serialized Scikit-Learn ML Pipeline
 ├── 📁 notebooks/
-│   └── Titanic_EDA_and_Modeling.ipynb # Complete EDA & Visualization Notebook
+│   └── Titanic_EDA_and_Modeling.ipynb # Exploratory Data Analysis Notebook
 ├── 📁 src/                          # Modular Python Source Code
-│   ├── feature_engineering.py       # Custom Scikit-Learn Feature Transformer
-│   └── train.py                     # Machine Learning Pipeline Training Script
+│   ├── feature_engineering.py       # Scikit-Learn custom Transformer pipeline
+│   └── train.py                     # Machine Learning training & evaluation script
 ├── .gitignore                       # Git ignore configuration
-├── requirements.txt                 # Python project dependencies
-├── run_app.bat                      # 1-Click Startup script for Windows
-└── README.md                        # Documentation & setup guide
+├── requirements.txt                 # Python dependencies
+├── run_app.bat                      # 1-Click execution script for Windows
+└── README.md                        # Project documentation
 ```
 
 ---
 
-## 📊 মডেল পারফরম্যান্স (Model Evaluation Results)
+## 📊 Model Performance Comparison
 
-5-Fold Stratified Cross-Validation ব্যবহার করে মূল্যায়ন করা ফলসমূহ:
+Evaluated using **5-Fold Stratified Cross-Validation**:
 
-| অ্যালগরিদম (Model Name) | একিউরেসি (Accuracy) | F1-Score | ROC-AUC Score |
+| Algorithm / Model | Accuracy | F1-Score | ROC-AUC Score |
 | :--- | :---: | :---: | :---: |
 | **Gradient Boosting Classifier (Best)** 🏆 | **83.84%** | **0.7752** | **0.8783** |
 | Random Forest Classifier | 83.50% | 0.7705 | 0.8737 |
@@ -65,102 +65,80 @@ Project_Titanic/
 
 ---
 
-## 🚀 যেকোনো পিসিতে রান ও টেস্ট করার উপায় (Execution Guide)
+## 🚀 Quickstart & Execution Guide
 
-### পদ্ধতি ১: ১-ক্লিকে রান করা (Windows Users - Recommended)
-১. প্রজেক্ট ফোল্ডারে থাকা **`run_app.bat`** ফাইলে ডাবল-ক্লিক করুন।
-২. এটি স্বয়ংক্রিয়ভাবে প্রয়োজনীয় এনভায়রনমেন্ট তৈরি করবে, ডিপেন্ডেন্সি ইন্সটল করবে, মডেল ট্রেইন করবে এবং আপনার ডিফল্ট ব্রাউজারে **`http://127.0.0.1:5000/`** ওপেন করবে।
+### Option 1: 1-Click Execution (Windows Users - Recommended)
+Simply double-click **`run_app.bat`** in the root directory. It will automatically set up the Python virtual environment, install requirements, train the model pipeline (if not already trained), and launch the web server in your default browser at **`http://127.0.0.1:5000/`**.
 
 ---
 
-### পদ্ধতি ২: ম্যানুয়ালি টার্মিনালে রান করা
+### Option 2: Manual Terminal Setup
 
-#### ১. প্রজেক্ট ফোল্ডারে টার্মিনাল ওপেন করুন এবং ভার্চুয়াল এনভায়রনমেন্ট সেটআপ করুন:
+#### 1. Clone & Set Up Virtual Environment:
 ```bash
-# Virtual Environment তৈরি করুন
-py -m venv .venv
+git clone https://github.com/ashfak-g/titanic-survival-prediction.git
+cd titanic-survival-prediction
 
-# Virtual Environment অ্যাক্টিভেট করুন (Windows)
+# Create Virtual Environment
+python -m venv .venv
+
+# Activate Virtual Environment (Windows)
 .\.venv\Scripts\activate
 
-# Linux / Mac এর ক্ষেত্রে:
+# On Linux/macOS:
 # source .venv/bin/activate
 ```
 
-#### ২. প্রয়োজনীয় ডিপেন্ডেন্সি ইন্সটল করুন:
+#### 2. Install Dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-#### ৩. মেশিন লার্নিং মডেল ট্রেইন করুন (Optional):
+#### 3. Train the Model Pipeline:
 ```bash
 python src/train.py
 ```
 
-#### ৪. Flask Web Application চালু করুন:
+#### 4. Run Flask Web Application:
 ```bash
 python app/app.py
 ```
-এখন আপনার যেকোনো ব্রাউজার থেকে **`http://127.0.0.1:5000/`** অ্যাড্রেসে গিয়ে অ্যাপটি ব্যবহার করতে পারবেন!
+Open **`http://127.0.0.1:5000/`** in your browser to test predictions!
 
 ---
 
-## 🧪 ডেমো টেস্ট কেস (Sample Test Scenarios)
+## 🧪 Sample Test Cases
 
-অ্যাপ্লিকেশনের নিখুঁত প্রেডিকশন পরীক্ষা করতে নিচের টেস্ট ইনপুটগুলো ইনপুট দিন:
+Test the model interface with these sample passenger profiles:
 
-### 🟢 টেস্ট কেস ১ (উচ্চ সম্ভাবনা):
+### 🟢 Test Case 1 (High Survival Probability):
 - **Pclass**: 1st Class
 - **Sex**: Female
 - **Age**: 29
 - **Fare**: $100
 - **Embarked**: Cherbourg (C)
-- 🎯 **ফলাফল**: `Survived ✅` (সম্ভাবনা: ~৯৯%)
+- 🎯 **Result**: `Survived ✅` (~99% Probability)
 
-### 🔴 টেস্ট কেস ২ (কম সম্ভাবনা):
+### 🔴 Test Case 2 (Low Survival Probability):
 - **Pclass**: 3rd Class
 - **Sex**: Male
 - **Age**: 30
 - **Fare**: $8
 - **Embarked**: Southampton (S)
-- 🎯 **ফলাফল**: `Did Not Survive ❌` (সম্ভাবনা: ~১১%)
+- 🎯 **Result**: `Did Not Survive ❌` (~11% Probability)
 
 ---
 
-## 🐙 গিটহাবে পুশ করার নিয়ম (How to Push to GitHub)
-
-যদি আপনি এই প্রজেক্টটি আপনার গিটহাব অ্যাকাউন্টে পুশ করতে চান, তবে টার্মিনালে পর্যায়ক্রমে নিচের কমান্ডগুলো রান করুন:
-
-```bash
-# ১. গিট রিপোজিটরি ইনিশিয়ালাইজ করুন
-git init
-
-# ২. মেইন ব্রাঞ্চ নির্বাচন করুন
-git branch -M main
-
-# ৩. সমস্ত ফাইল স্টেজিং অরিয়ায় যুক্ত করুন
-git add .
-
-# ৪. গিট কমিট করুন
-git commit -m "Upgrade Titanic ML project to intermediate pipeline & Flask Web App"
-
-# ৫. আপনার গিটহাব রিমোট রিপোজিটরি ইউআরএল যুক্ত করুন (YOUR_USERNAME ও YOUR_REPOSITORY জায়গায় নাম বসান)
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
-
-# ৬. গিটহাবে পুশ করুন
-git push -u origin main
-```
-
----
-
-## 👨‍💻 টেকনোলজি স্ট্যাক (Tech Stack)
+## 🛠️ Tech Stack
 
 - **Language**: Python 3.10+
 - **Machine Learning**: Scikit-Learn, Pandas, NumPy, Joblib
-- **Visualization**: Matplotlib, Seaborn
+- **Data Visualization**: Matplotlib, Seaborn
 - **Web Framework**: Flask, HTML5, CSS3 (Glassmorphism), FontAwesome
-- **Environment**: Virtualenv, Windows Batch Scripting
+- **Environment & Automation**: Virtualenv, Windows Batch Scripting
 
 ---
 
-❤️ **প্রজেক্টটি ভালো লাগলে গিটহাবে একটি Star ⭐ দিন!**
+## 📜 License
+
+Distributed under the MIT License. See `LICENSE` for details.
